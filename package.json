@@ -1,0 +1,29 @@
+{
+  "name": "LIRINodeApp",
+  "version": "1.0.0",
+  "description": "Homework 9 - LIRINodeApp",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msp9612/LIRINodeApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msp9612/LIRINodeApp/issues"
+  },
+  "homepage": "https://github.com/msp9612/LIRINodeApp#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-google": "^0.14.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.1.0",
+    "node-spotify-api": "^1.1.1"
+  }
+}
