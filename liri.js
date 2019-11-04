@@ -1,4 +1,3 @@
-// Imports
 require('dotenv').config();
 const Spotify = require('node-spotify-api');
 const keys = require('./keys.js');
@@ -7,6 +6,16 @@ const moment = require('moment');
 const fs = require('fs.realpath');
 
 const spotify = new Spotify(keys.spotify);
+const errorMessage = 'No data found.';
+let searchInput = process.argv.slice(3).join(' ');
+
+
+// Search results can erroneously be an empty array or a string depending on the search
+const badSearch = (results) => {
+  if (results == false || typeof results === 'string') {
+    return true;
+  }
+};
 
 
 // Switch statement determines which command is executed
@@ -16,11 +25,14 @@ switch (process.argv[2]) {
    * Search Bands in Town Artist Events API for an artist and display certain information
    */
   case 'concert-this':
-    artistInput = process.argv.slice(3).join(' ');
-    axios.get('https://rest.bandsintown.com/artists/' + artistInput + '/events?app_id=codingbootcamp')
+    axios.get('https://rest.bandsintown.com/artists/' + searchInput + '/events?app_id=codingbootcamp')
         .then((response) => {
           // Received response from query
           const searchData = response.data;
+          if (badSearch(searchData)) {
+            console.log(errorMessage);
+            return;
+          }
           console.log('Concert data found:');
           for (let i = 0; i < searchData.length; i++) {
             const concert = searchData[i];
@@ -28,13 +40,12 @@ switch (process.argv[2]) {
                 concert.venue.name + ', ' +
                 concert.venue.city + ', ' +
                 (concert.venue.region || concert.venue.country || 'no region data found') + ', ' +
-            moment(concert.datetime).format('MM/DD/YYYY')
+                moment(concert.datetime).format('MM/DD/YYYY')
             );
           }
         })
         .catch((err) => {
-          // No data found or other error occurred
-          console.log('No data found.');
+          console.log(errorMessage);
           return;
         });
     break;
@@ -44,15 +55,19 @@ switch (process.argv[2]) {
    * Search Spotify API for a song and display certain information
    */
   case 'spotify-this-song':
-    songInput = process.argv.slice(3).join(' ');
-    if (songInput === '') {
+    searchInput = process.argv.slice(3).join(' ');
+    if (searchInput === '') {
       // Defaults to "The Sign" by Ace of Base if no song is provided
-      songInput = 'The Sign';
+      searchInput = 'The Sign';
     }
-    spotify.search({type: 'track', query: songInput})
+    spotify.search({type: 'track', query: searchInput})
         .then((response) => {
           // Received response from query
           const searchData = response.tracks.items;
+          if (badSearch(searchData)) {
+            console.log(errorMessage);
+            return;
+          }
           for (let i = 0; i < searchData.length; i++) {
             let songArtists = '';
             for (let k = 0; k < searchData[i].artists.length; k++) {
@@ -70,9 +85,7 @@ switch (process.argv[2]) {
           }
         })
         .catch((err) => {
-          console.log(err);
-          // No data found or other error occurred
-          console.log('No data found.');
+          console.log(errorMessage);
           return;
         });
     break;
