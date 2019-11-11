@@ -11,7 +11,7 @@ Search Bands in Town Artist Events API for an artist and display the following e
    * Venue location
    * Event date
 
-![concert-this](images/commConcert.png "concert-this")
+![concert-this](https://raw.githubusercontent.com/msp9612/LIRINodeApp/master/images/commConcert.PNG "concert-this")
 
     spotify-this-song
 
@@ -22,7 +22,7 @@ Search Spotify API for a song and display the following information:
    * Preview link from Spotify (if available)
    * Album name
 
-![spotify-this-song](images/commSpotify.png "spotify-this-song")
+![spotify-this-song](https://raw.githubusercontent.com/msp9612/LIRINodeApp/master/images/commSpotify.PNG "spotify-this-song")
 
     movie-this
 
@@ -37,13 +37,13 @@ Search OMDB API for a movie and display the following information:
    * Plot
    * Actors
 
-![movie-this](images/commMovie.png "movie-this")
+![movie-this](https://raw.githubusercontent.com/msp9612/LIRINodeApp/master/images/commMovie.PNG "movie-this")
 
     do-what-it-says
 
 Call one of LIRI's commands using the text inside of random.txt
 
-![do-what-it-says](images/commDoIt.png "do-what-it-says")
+![do-what-it-says](https://raw.githubusercontent.com/msp9612/LIRINodeApp/master/images/commDoIt.PNG "do-what-it-says")
 
 # 
 
