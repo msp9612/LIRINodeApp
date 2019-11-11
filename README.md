@@ -11,7 +11,7 @@ Search Bands in Town Artist Events API for an artist and display the following e
    * Venue location
    * Event date
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![concert-this](images/commConcert.png "concert-this")
 
     spotify-this-song
 
@@ -22,7 +22,7 @@ Search Spotify API for a song and display the following information:
    * Preview link from Spotify (if available)
    * Album name
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![spotify-this-song](images/commSpotify.png "spotify-this-song")
 
     movie-this
 
@@ -37,13 +37,13 @@ Search OMDB API for a movie and display the following information:
    * Plot
    * Actors
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![movie-this](images/commMovie.png "movie-this")
 
     do-what-it-says
 
 Call one of LIRI's commands using the text inside of random.txt
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![do-what-it-says](images/commDoIt.png "do-what-it-says")
 
 # 
 
