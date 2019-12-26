@@ -62,7 +62,7 @@ const commSpotify = (searchInput) => {
           for (let k = 0; k < searchData[i].artists.length; k++) {
             songArtists += searchData[i].artists[k].name + ', ';
           }
-          console.log('Artists(s): ' + songArtists.substring(0, songArtists.length - 2));
+          console.log('Artist(s): ' + songArtists.substring(0, songArtists.length - 2));
           console.log('Song name: ' + searchData[i].name);
           let songPreview = searchData[i].preview_url;
           if (songPreview === null) {
